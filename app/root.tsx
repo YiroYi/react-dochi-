@@ -73,3 +73,39 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     </main>
   );
 }
+
+// Routes
+// route("about", "routes/about.jsx"),
+
+// Route Folder create the file with the name of the route
+
+
+// import React from "react";
+// import {ContactScreen} from "../screens/contactScreen/contactScreen.jsx";
+//
+// export default function Contact() {
+//   return <ContactScreen />
+// }
+
+// Teach how to create screens
+
+// Mini Reto como pasarle los props a la función y que los pinte en el alert
+// Mini Reto convertir los P an componente independiente
+// Extraer el Boton en su propios componente
+
+// Hooks useState
+
+// Funcion ApareceDesaparece
+// State in react is a way to store and manage data that can change over time in a component. It allows you to create dynamic and interactive user interfaces by keeping track of the current state of the component and updating it when necessary. The useState hook is a built-in function in React that allows you to add state to functional components. It returns an array with two elements: the current state value and a function to update that state. You can use this hook to manage various types of data, such as strings, numbers, arrays, or objects, and it will trigger a re-render of the component whenever the state changes.
+
+// Mini Reto agregar un contador de clicks
+
+// Hace una pantalla nueva que se llame tablero de control
+// 1. Boton que sume y reste contador,
+// 3. Agregar una lista de tareas simple con un input
+
+
+// Reto Final
+// Agregar un todo list, componente tarjeta y tenga boton de borrar del lado derecho
+
+// Revisar como hacer el fetch y refactorizar todo el reto anterior.

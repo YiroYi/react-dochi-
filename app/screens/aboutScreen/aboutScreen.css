@@ -1,0 +1,13 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: orange;
+    padding: 30px;
+}
+
+.btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: blue;
+}

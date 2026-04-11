@@ -26,5 +26,6 @@ export const AboutScreen = ({ name, age, isSingle, helloWorld, showName }) => {
 
     <button className="btn" onClick={ () => { handleMostrarEdad(true) } }>Mostrar Edad</button>
 
+
   </div>
 }

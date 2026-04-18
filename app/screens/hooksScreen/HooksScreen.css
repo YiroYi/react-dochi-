@@ -99,3 +99,7 @@
     background-color: #059669;
     transform: translateY(-1px);
 }
+
+p {
+    color: black;
+}

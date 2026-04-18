@@ -1,6 +1,74 @@
 import React, {useState, useEffect} from "react";
-import "./HooksScreen.css";
+import "./HooksScreen.css"
+import {fetchPosts} from "../../api/posts/post.js";
+import {Spinner} from "~/screens/common/spinner/Spinner.jsx";
+import {SuccedToast} from "~/screens/common/succedToast/SuccedToast.jsx";
 
 export const HooksScreen = () => {
-  return <h1>UseEffect</h1>
+  const [posts, setPosts] = useState([])
+  const [showSpinner, setShowSpinner] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [mensajeDelApi, setMensajeDelApi] = useState("")
+
+
+
+  function handleShowSpinner(flag) {
+    setShowSpinner(flag)
+  }
+
+  function getPosts() {
+    handleShowSpinner(true)
+    fetchPosts()
+        .then((json) => {
+          console.log(json)
+          handleShowSpinner(false)
+          setMensajeDelApi("Datos correctos")
+          handleShowToast()
+        })
+  }
+
+  function handleShowToast() {
+    setShowToast(true)
+  }
+
+  function handleHideToast() {
+    setShowToast(false)
+  }
+
+  return <div className="main-container">
+    <div className="left-container">
+      <h1>Acciones</h1>
+      <div className="actions">
+        <button onClick={getPosts}>Fetch</button>
+        <button>Delete Posts</button>
+      </div>
+    </div>
+    <div className="right-container">
+      { showSpinner &&
+          <Spinner />
+      }
+      { showToast &&
+          <SuccedToast
+            mensaje={mensajeDelApi}
+            onHandleHideToast={handleHideToast}
+          />
+      }
+    </div>
+  </div>
 }
+
+
+
+
+
+// 1. Repaso de componentes useState crear el spinner
+// 2. Repaso de Promise create fetch
+// 3. introduccion a useEffect -> fetch al cargar el componente
+// 3. useState -> quitando el spinner
+// 4. useState -> mostrando el error
+// 5. useState -> mostrando el toast de exito
+// 6. introduccion a props anidados map con cards
+// 7. introduccion a onChange con formulario
+// 8. create post y use State
+// 9. update useEffect cuando se actualiza useState
+// 10. Reto agregar validacion al formulario con useState

@@ -1,12 +1,11 @@
 import './SuccedToast.css';
 
-export const SuccedToast = ({}) => {
-  if (!false) return null;
+export const SuccedToast = ({ mensaje, onHandleHideToast }) => {
 
   return (
       <div className="error-bar">
-        <span>Message Text</span>
-        <button onClick={() => {}}>✕</button>
+        <span>{mensaje}</span>
+        <button onClick={onHandleHideToast}>✕</button>
       </div>
   );
 };

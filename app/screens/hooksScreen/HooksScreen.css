@@ -1,0 +1,101 @@
+.main-container {
+    width: 100vw;
+    height: auto;
+    background-color: darkgray;
+    display: flex;
+}
+
+.left-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.right-container {
+    width: 50%;
+    height: 100%;
+}
+
+/* Buttons container */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+/* General button styles */
+.actions button {
+    padding: 10px 14px;
+    border: none;
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.actions button:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* Remove button (different color) */
+.actions button:last-child {
+    background-color: #ef4444;
+}
+
+.actions button:last-child:hover {
+    background-color: #dc2626;
+}
+
+/* Form styles */
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Inputs */
+.post-form input,
+.post-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+    border-color: #4f46e5;
+}
+
+/* Textarea */
+.post-form textarea {
+    min-height: 80px;
+    resize: none;
+}
+
+/* Submit button */
+.post-form button {
+    padding: 10px;
+    border: none;
+    background-color: #10b981;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.post-form button:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}

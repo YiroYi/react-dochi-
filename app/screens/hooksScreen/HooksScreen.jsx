@@ -3,13 +3,13 @@ import "./HooksScreen.css"
 import {fetchPosts} from "../../api/posts/post.js";
 import {Spinner} from "~/screens/common/spinner/Spinner.jsx";
 import {SuccedToast} from "~/screens/common/succedToast/SuccedToast.jsx";
-import {PostCard} from "~/screens/hooksScreen/components/PostCard.jsx";
+import {NestedPosts} from "~/screens/hooksScreen/components/NestedPosts.jsx";
+import {usePostContext} from "~/context/postContext.jsx";
 
 export const HooksScreen = () => {
-  const [posts, setPosts] = useState([])
-  const [showSpinner, setShowSpinner] = useState(false)
   const [showToast, setShowToast] = useState(false)
-  const [mensajeDelApi, setMensajeDelApi] = useState("")
+
+  const { posts, getPosts, mensajeDelApi, showSpinner } = usePostContext();
 
   useEffect(() => {
     getPosts()
@@ -28,20 +28,6 @@ export const HooksScreen = () => {
     };
   })
 
-  function handleShowSpinner(flag) {
-    setShowSpinner(flag)
-  }
-
-  function getPosts() {
-    handleShowSpinner(true)
-    fetchPosts()
-        .then((json) => {
-          setPosts(json)
-          handleShowSpinner(false)
-          setMensajeDelApi("Datos correctos")
-        })
-  }
-
   function handleShowToast() {
     setShowToast(true)
   }
@@ -49,11 +35,6 @@ export const HooksScreen = () => {
   function handleHideToast() {
     setShowToast(false)
   }
-
-  const mostrarPosts = posts.length > 0 ?
-      posts.map((post, index) => {
-        return <PostCard key={index} post={post} />
-      }) : <p>No hay posts</p>
 
   return <div className="main-container">
     <div className="left-container">
@@ -73,7 +54,7 @@ export const HooksScreen = () => {
             onHandleHideToast={handleHideToast}
           />
       }
-      {mostrarPosts}
+      <NestedPosts />
     </div>
   </div>
 }

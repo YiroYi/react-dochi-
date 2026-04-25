@@ -1,0 +1,18 @@
+.users-container {
+    padding: 30px;
+    background-color: #f5f6fa;
+    min-height: 100vh;
+    color: #4338ca;
+}
+
+.users-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
